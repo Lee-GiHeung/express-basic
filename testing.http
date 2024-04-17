@@ -54,3 +54,7 @@ Content-Type: application/json; charset=UTF-8
 # localhost:8080/list
 ###
 get http://localhost:8000/list
+
+# localhost:8000/1
+###
+get http://localhost:8000/1
