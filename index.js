@@ -90,3 +90,15 @@ app.get("/:id", (req, res) => {
         }
     });
 });
+
+app.put("/:id", (req, res) => {
+    const { id, name, capital, population } = req.body;
+    console.log(`id: ${id}, name: ${name}, capital: ${capital}, population: ${population}`);
+    const sql = "update nations_table set population=? where id=?";
+    db.query(sql, [population, id], (err, results, fields) => {
+        console.log("err", err);
+        console.log("result", results);
+        console.log("fields", fields);
+        res.status(200);
+    });
+});
